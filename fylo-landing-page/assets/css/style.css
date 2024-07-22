@@ -13,6 +13,7 @@
     --very-dark-blue: hsl(243, 87%, 12%);
     --desaturated-blue: hsl(238, 22%, 44%);
     --bright-blue: hsl(224, 93%, 58%);
+    --very-light-blue: hsl(224, 90%, 69%);
     --moderate-cyan: hsl(170, 45%, 43%);
     --light-grayish-blue: hsl(240, 75%, 98%);
     --light-gray: hsl(0, 0%, 75%);
@@ -46,6 +47,10 @@ a {
     text-decoration: none;
 }
 
+a:hover {
+    color: var(--very-light-blue);
+}
+
 ul {
     list-style: none;
 }
@@ -76,7 +81,7 @@ img {
 }
 
 .btn:hover {
-    background: var(--desaturated-blue);
+    background: var(--very-light-blue);
 }
 
 header {
@@ -149,7 +154,7 @@ header {
 .how-it-works-container {
     background-color: var(--light-grayish-blue);
     padding-inline: 5%;
-    padding-block: 40px 100px;
+    padding-block: 0 100px;
 }
 
 .how-it-works-container,
@@ -231,6 +236,12 @@ header {
     gap: 24px;
 }
 
+.early-access-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
 .early-access p {
     max-width: 320px;
     margin-inline: auto;
@@ -287,8 +298,10 @@ footer .footer-links ul.socials li {
     align-items: center;
 }
 
-.footer-links .socials img {
+.footer-links .socials svg {
     width: 32px;
+    height: 32px;
+    fill: currentColor
 }
 
 
@@ -306,7 +319,8 @@ footer .footer-links ul.socials li {
     }
 
     .content h1,
-    .how-it-works-content h2 {
+    .how-it-works-content h2,
+    .early-access-content h2 {
         font-size: 34px;
     }
 
@@ -335,11 +349,12 @@ footer .footer-links ul.socials li {
     /* HOW IT WORKS SECTION */
 
     .curve {
-        height: 150px;
+        height: 120px;
         background-image: url('../images/bg-curve-desktop.svg');
     }
 
-    .how-it-works-container {
+    .how-it-works-container,
+    .early-access {
         flex-direction: row-reverse;
         align-items: center;
         gap: 40px;
@@ -357,8 +372,43 @@ footer .footer-links ul.socials li {
         margin-right: auto;
     }
 
-    .how-it-works-img {
+    .how-it-works-img,
+    .early-access .banner-cta {
         max-width: 450px;
     }
 
+    .early-access {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .early-access-content {
+        text-align: left;
+    }
+
+    .early-access-content p {
+        max-width: 500px;
+        margin-inline: auto;
+    }
+
+    .early-access .banner-cta {
+        flex-direction: column;
+        flex: 1;
+        margin-right: 0;
+        margin-left: auto;
+    }
+
+    .early-access .banner-cta button {
+        max-width: max-content;
+    }
+
+    footer .logo {
+        max-width: 150px;
+    }
+
+    footer .footer-links {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
 }
